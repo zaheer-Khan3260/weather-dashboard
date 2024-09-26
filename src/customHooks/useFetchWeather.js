@@ -20,14 +20,14 @@ const useFetchWeather = (location) => {
             try {
                 const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
                 const [currentWeatherResponse, forecastResponse] = await Promise.all([
-                    axios.get(`http://api.weatherstack.com/current`, {
+                    axios.get(`https://api.weatherstack.com/current`, {
                         params: {
                             access_key: apiKey,
                             query: location
                         },
                         signal
                     }),
-                    axios.get(`http://api.weatherstack.com/forecast`, {
+                    axios.get(`https://api.weatherstack.com/forecast`, {
                         params: {
                             access_key: apiKey,
                             query: location,
